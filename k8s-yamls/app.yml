@@ -16,7 +16,5 @@ spec:
         - name: flask-demo
           image: k8s-flask
           imagePullPolicy: Never
-          command: ["python"]
-          args: ["app.py"]
           ports:
             - containerPort: 5000

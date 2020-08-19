@@ -6,4 +6,4 @@ COPY / /data/app
 
 WORKDIR /data/app
 
-ENTRYPOINT  docker-entrypoint.sh
+ENTRYPOINT ["sh", "docker-entrypoint.sh"]
