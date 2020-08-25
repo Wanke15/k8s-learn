@@ -1,0 +1,19 @@
+apiVersion: autoscaling/v2beta2
+kind: HorizontalPodAutoscaler
+metadata:
+  name: flask-hpa
+spec:
+  scaleTargetRef:
+    apiVersion: apps/v1
+    kind: Deployment
+    name: flask-demo
+  minReplicas: 2
+  maxReplicas: 8
+  metrics:
+  - type: Pods
+    pods:
+      metric:
+        name: http_requests_received
+      target:
+        type: AverageValue
+        averageValue: 10

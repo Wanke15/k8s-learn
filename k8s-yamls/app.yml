@@ -6,7 +6,7 @@ spec:
   selector:
     matchLabels:
       app: flask-demo
-  replicas: 3
+  replicas: 1
   template:
     metadata:
       labels:
@@ -15,6 +15,13 @@ spec:
       containers:
         - name: flask-demo
           image: k8s-flask
+          resources:
+            requests:
+              memory: "64Mi"
+              cpu: "250m"
+            limits:
+              memory: "128Mi"
+              cpu: "500m"
           imagePullPolicy: Never
           ports:
             - containerPort: 5000
