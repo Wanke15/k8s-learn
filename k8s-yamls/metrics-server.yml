@@ -88,7 +88,7 @@ spec:
         args:
           - --cert-dir=/tmp
           - --secure-port=4443
-          - --kubelet-insecure-tls
+          - --kubelet-insecure-tls # 不安全，不要再生产环境中这样用
         ports:
         - name: main-port
           containerPort: 4443
